@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+   デザイントークン
+   詳細: skills/brand-system/SKILL.md
+   ========================================================== */
+:root {
+  /* Primary - ネイビー（信頼感・士業の格） */
+  --color-primary-50: #f0f4f9;
+  --color-primary-100: #d8e1ed;
+  --color-primary-200: #b0c2db;
+  --color-primary-300: #7a96b8;
+  --color-primary-400: #4a6b8f;
+  --color-primary-500: #1e3a5f;
+  --color-primary-600: #0a2540;
+  --color-primary-700: #071d33;
+  --color-primary-800: #061a2e;
+  --color-primary-900: #030d18;
+
+  /* Accent - ゴールド（"取りこぼさない"の象徴） */
+  --color-accent-50: #faf6ee;
+  --color-accent-100: #f4ead1;
+  --color-accent-200: #e0c382;
+  --color-accent-300: #d4b371;
+  --color-accent-400: #c9a961;
+  --color-accent-500: #a68843;
+  --color-accent-600: #846b33;
+
+  /* Tech - エレクトリックブルー（AI・テック感） */
+  --color-tech-400: #60a5fa;
+  --color-tech-500: #3b82f6;
+  --color-tech-600: #2563eb;
+}
+
+/* ==========================================================
+   Base（AIDER TCD115 準拠）
+   - 本文・見出し共にゴシック系（Hiragino Sans / Noto Sans JP）を基本
+   - Hero等の主要大見出しのみ明朝を使用（`.typo-hero` で明示的に指定）
+   - 文字詰め（palt）と和文字間を整え、AIDER風の"読みやすく品のある"印象
+   ========================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-primary-800 font-sans-ja;
+    font-feature-settings: 'palt' 1;
+    letter-spacing: 0.03em; /* AIDER風の和文字間 */
+  }
+
+  /* 見出しはゴシック体をデフォルトに（AIDER準拠）
+     明朝を使いたい箇所は `.typo-hero` などで個別指定 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans-ja;
+    font-feature-settings: 'palt' 1;
+    letter-spacing: 0.02em;
+  }
+
+  /* 選択時のハイライト色 */
+  ::selection {
+    @apply bg-accent-200 text-primary-900;
+  }
+
+  /* スクロールバー（Webkit） */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-200 rounded;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-300;
+  }
+
+  /* フォーカス可視化 */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white;
+  }
+}
+
+/* ==========================================================
+   Components
+   ========================================================== */
+@layer components {
+  /* ==========================================================
+     タイポグラフィ共通クラス（AIDER TCD115 準拠 / 2026-04-18）
+     参考: https://demo.tcd-theme.com/tcd115/
+     - 見出しは基本ゴシック体（Noto Sans JP）／Heroのみ明朝
+     - letter-spacing を和文に最適化（0.02〜0.05em）
+     - 英語ラベルは大文字・字間広め（0.25em〜）
+     ========================================================== */
+
+  /* 英語小見出し（セクション先頭のラベル）— AIDER風 大文字・字間広め */
+  .section-label {
+    @apply font-sans-en text-caption font-medium text-accent uppercase inline-flex items-center justify-center gap-3;
+    letter-spacing: 0.25em;
+  }
+  /* 左側に短いアクセントライン（AIDER風の装飾） */
+  .section-label::before {
+    content: '';
+    @apply block w-10 h-px bg-accent;
+  }
+
+  /* Hero ページ用のメイン見出し（最大） — ここだけ明朝で格を出す */
+  .typo-hero {
+    @apply font-serif-ja text-hero font-bold text-primary-900 leading-[1.5];
+    letter-spacing: 0.05em;
+  }
+
+  /* 下層ページのページタイトル — ゴシック・普通太さで品良く */
+  .typo-page-h1 {
+    @apply font-sans-ja text-page-h1 font-medium text-primary-900 leading-[1.5];
+    letter-spacing: 0.05em;
+  }
+
+  /* セクション見出し（H2相当） — AIDER CB title 準拠（48px / 普通太さ） */
+  .typo-section {
+    @apply font-sans-ja text-section font-medium text-primary-900 leading-[1.5];
+    letter-spacing: 0.05em;
+  }
+
+  /* カード・項目の見出し（H3相当） */
+  .typo-card {
+    @apply font-sans-ja text-card font-bold text-primary-900 leading-[1.6];
+    letter-spacing: 0.03em;
+  }
+
+  /* 小見出し（H4相当） */
+  .typo-sub {
+    @apply font-sans-ja text-sub font-bold text-primary-900 leading-[1.6];
+    letter-spacing: 0.03em;
+  }
+
+  /* リード文（見出し直下の導入） */
+  .typo-lead {
+    @apply font-sans-ja text-lead text-primary-700 leading-[2];
+    letter-spacing: 0.05em;
+  }
+  .typo-lead-lg {
+    @apply font-sans-ja text-lead-lg text-primary-700 leading-[2];
+    letter-spacing: 0.05em;
+  }
+
+  /* 本文 */
+  .typo-body {
+    @apply font-sans-ja text-body text-primary-700 leading-[2];
+    letter-spacing: 0.05em;
+  }
+
+  /* 補足・日付・タグなど */
+  .typo-meta {
+    @apply font-sans-ja text-meta text-primary-500 leading-[1.6];
+    letter-spacing: 0.05em;
+  }
+
+  /* 互換用：旧 .section-heading（新規コードでは .typo-section を推奨） */
+  .section-heading {
+    @apply typo-section;
+  }
+
+  /* セクション見出しブロック（AIDER風: センター揃えが基本） */
+  .section-heading-block {
+    @apply flex flex-col items-center text-center gap-4 mb-12 md:mb-16;
+  }
+  /* 左揃えバリアント（ページ内の特殊箇所用） */
+  .section-heading-block.is-left {
+    @apply items-start text-left;
+  }
+
+  /* コンテナ */
+  .container-default {
+    @apply w-full max-w-container mx-auto px-container-px;
+  }
+
+  .container-narrow {
+    @apply w-full max-w-container-narrow mx-auto px-container-px;
+  }
+
+  .container-text {
+    @apply w-full max-w-container-text mx-auto px-container-px;
+  }
+
+  /* セクション余白 */
+  .section-py-lg {
+    @apply py-section-lg;
+  }
+  .section-py-md {
+    @apply py-section-md;
+  }
+  .section-py-sm {
+    @apply py-section-sm;
+  }
+}
+
+/* ==========================================================
+   Utilities
+   ========================================================== */
+@layer utilities {
+  /* テキストバランス（見出し用） */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* 疑似要素の装飾ライン */
+  .accent-line::before {
+    content: '';
+    @apply block w-12 h-0.5 bg-accent mb-6;
+  }
+}
