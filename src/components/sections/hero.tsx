@@ -21,46 +21,54 @@ export function Hero() {
       className="relative flex items-center justify-center overflow-hidden bg-primary"
       style={{ minHeight: 'clamp(640px, 92vh, 900px)' }}
     >
-      {/* 背景: グラデーション */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900"
-        aria-hidden="true"
-      />
-
-      {/* 背景: 控えめなパーティクル風ドット */}
-      <div className="absolute inset-0 opacity-[0.06]" aria-hidden="true">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, #C9A961 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-        />
-      </div>
-
-      {/* 背景: Labor Lab. の大きな装飾タイポ */}
-      <div
-        className="absolute bottom-0 right-0 select-none pointer-events-none overflow-hidden"
+      {/* 背景: メインビジュアル動画（mv.mp4） */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        poster="/images/logo.png"
         aria-hidden="true"
       >
-        <motion.span
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 0.04, x: 0 }}
-          transition={{ duration: 1.5, delay: 0.8, ease: easings.smooth }}
-          className="block font-sans-en italic font-extrabold text-accent whitespace-nowrap"
-          style={{ fontSize: 'clamp(8rem, 24vw, 20rem)', lineHeight: 0.9 }}
-        >
-          Labor Lab.
-        </motion.span>
-      </div>
+        <source src="/mv.mp4" type="video/mp4" />
+      </video>
+
+      {/* オーバーレイ：動画を"うっすら"見せるため、全体を深いネイビーで覆う
+          Tailwind標準の透明度刻みは /5, /10, ...,/95 のみなので
+          確実に効くよう任意値記法（rgba）で指定 */}
+      {/* 1. 全体に濃いネイビーの半透明（動画はシルエットとして感じられる程度） */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: 'rgba(3, 13, 24, 0.75)' }}
+        aria-hidden="true"
+      />
+      {/* 2. 左側からさらに濃くしてテキスト可読性を確保 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(3,13,24,0.5) 0%, rgba(3,13,24,0.25) 50%, rgba(3,13,24,0) 100%)',
+        }}
+        aria-hidden="true"
+      />
+      {/* 3. 下端をやや濃く（スクロールヒントの視認性確保） */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-40"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(3,13,24,0.7) 0%, rgba(3,13,24,0) 100%)',
+        }}
+        aria-hidden="true"
+      />
 
       {/* 金色の装飾アクセントライン（左上） */}
       <motion.div
         initial={{ opacity: 0, scaleX: 0 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: easings.smooth }}
-        className="absolute top-32 left-0 w-24 md:w-40 h-[2px] bg-accent origin-left"
+        className="absolute top-32 left-0 w-24 md:w-40 h-[2px] bg-accent origin-left z-10"
         aria-hidden="true"
       />
 
