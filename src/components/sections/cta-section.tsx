@@ -43,8 +43,7 @@ export function CtaSection() {
           </p>
 
           <h2
-            className="font-sans-ja text-section font-medium text-white leading-[1.35] mb-8 text-balance"
-            style={{ letterSpacing: '0.05em' }}
+            className="typo-section text-white text-balance mb-8"
           >
             {CTA_SECTION.heading}
           </h2>

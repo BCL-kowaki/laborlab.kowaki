@@ -53,7 +53,7 @@ export function WhyUs() {
 
               {/* 右側: タイトル + 本文 */}
               <div className="flex-1">
-                <h3 className="font-serif-ja text-section font-bold text-primary-900 leading-[1.4] tracking-tight mb-6 text-balance">
+                <h3 className="font-sans-ja text-card font-bold text-primary-900 leading-[1.4] mb-6 text-balance" style={{ letterSpacing: '0.03em' }}>
                   {reason.title}
                 </h3>
                 <div className="text-primary-800 text-body leading-[1.95] whitespace-pre-line">

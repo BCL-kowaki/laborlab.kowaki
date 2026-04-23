@@ -94,7 +94,7 @@ export function ServicesAlternating() {
                   </p>
 
                   {/* タイトル */}
-                  <h3 className="typo-section mb-6 text-balance">
+                  <h3 className="font-sans-ja text-card font-bold text-primary-900 leading-[1.4] mb-6 text-balance" style={{ letterSpacing: '0.03em' }}>
                     {item.title}
                   </h3>
 
