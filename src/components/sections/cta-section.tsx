@@ -42,7 +42,10 @@ export function CtaSection() {
             {CTA_SECTION.sectionLabel}
           </p>
 
-          <h2 className="font-serif-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-8 text-balance">
+          <h2
+            className="font-sans-ja text-section font-medium text-white leading-[1.35] mb-8 text-balance"
+            style={{ letterSpacing: '0.05em' }}
+          >
             {CTA_SECTION.heading}
           </h2>
 

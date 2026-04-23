@@ -68,7 +68,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          'font-sans-ja text-section font-medium leading-[1.5] text-balance mt-2',
+          'font-sans-ja text-section font-medium leading-[1.35] text-balance mt-2',
           theme === 'dark' ? 'text-white' : 'text-primary-900',
         )}
         style={{ letterSpacing: '0.05em' }}
