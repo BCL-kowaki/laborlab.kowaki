@@ -127,9 +127,9 @@
     letter-spacing: 0.05em;
   }
 
-  /* セクション見出し（H2相当） — AIDER CB title 準拠（48px / 普通太さ） */
+  /* セクション見出し（H2相当） — 全セクション見出しの基準スタイル */
   .typo-section {
-    @apply font-sans-ja text-section font-medium text-primary-900 leading-[1.5];
+    @apply font-sans-ja text-section font-medium text-primary-900 leading-[1.35];
     letter-spacing: 0.05em;
   }
 
