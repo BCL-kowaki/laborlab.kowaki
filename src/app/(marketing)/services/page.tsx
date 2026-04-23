@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <PageHero
         sectionLabel={SERVICES.sectionLabel}
         heading={SERVICES.heading}
-        lead={'顧問契約からスポット業務まで、経営フェーズに合わせた\n7つのサービスをご提供しています。'}
+        lead={'AIとクラウドで、労務を経営の加速装置に変える。\n顧問契約・DXコンサル・スポット業務まで、貴社の成長フェーズに合わせた7つのサービス。'}
       />
 
       <section className="section-py-lg bg-white">

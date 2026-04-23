@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { HERO, BRAND } from '@/lib/copy';
@@ -138,10 +138,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button variant="outline-white" size="xl" asChild>
-              <Link href="/contact/download">
-                <FileText className="h-5 w-5" />
-                {HERO.ctaSecondary}
-              </Link>
+              <Link href="#solutions">{HERO.ctaSecondary}</Link>
             </Button>
           </motion.div>
 
