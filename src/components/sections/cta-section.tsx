@@ -70,7 +70,7 @@ export function CtaSection() {
               </Link>
             </Button>
             <Button variant="outline-white" size="xl" asChild>
-              <Link href="tel:+81XXXXXXXXX">
+              <Link href="tel:09037985423">
                 <Phone className="h-5 w-5" />
                 {CTA_SECTION.buttons.secondary}
               </Link>
