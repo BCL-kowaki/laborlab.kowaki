@@ -602,7 +602,6 @@ export const NAVIGATION = [
   { label: 'お知らせ', href: '/news' },
   { label: '様式集', href: '/forms' },
   { label: 'コラム', href: '/blog' },
-  { label: 'お問い合わせ', href: '/contact' },
 ] as const;
 
 // ==========================================================
