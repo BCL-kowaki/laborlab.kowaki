@@ -16,6 +16,8 @@ const schema = z.object({
   phone: z.string().optional(),
   subject: z.string().min(1, 'ご相談内容をお選びください'),
   message: z.string().min(10, 'お問い合わせ内容を10文字以上でご入力ください'),
+  /** Honeypot: スパムボット対策（通常ユーザーには非表示） */
+  website: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -23,12 +25,13 @@ type FormValues = z.infer<typeof schema>;
 /**
  * お問い合わせフォーム。
  * バリデーションは zod + react-hook-form。
- * 送信処理（Resend連携）は後続で実装予定のため、現在はプレースホルダー動作。
+ * 送信は /api/contact 経由で GAS Web App に転送される。
  */
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
   );
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const {
     register,
@@ -41,12 +44,38 @@ export function ContactForm() {
 
   const onSubmit = async (data: FormValues) => {
     setStatus('submitting');
-    // TODO: Resend連携（API Route）を後続で実装
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    // eslint-disable-next-line no-console
-    console.info('[Contact Form] (送信処理は未実装 / プレビュー)', data);
-    setStatus('success');
-    reset();
+    setErrorMessage('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        let msg = '送信に失敗しました。時間をおいて再度お試しください。';
+        try {
+          const j = await res.json();
+          if (j?.error === 'invalid_input') {
+            msg = '入力内容に誤りがあります。ご確認のうえ再度お試しください。';
+          }
+        } catch {
+          // ignore
+        }
+        setErrorMessage(msg);
+        setStatus('error');
+        return;
+      }
+
+      setStatus('success');
+      reset();
+    } catch (err) {
+      console.error('[Contact Form] submit failed', err);
+      setErrorMessage(
+        '通信エラーが発生しました。時間をおいて再度お試しください。',
+      );
+      setStatus('error');
+    }
   };
 
   const form = CONTACT_PAGE.form;
@@ -250,6 +279,18 @@ export function ContactForm() {
         )}
       </div>
 
+      {/* Honeypot（ボット対策・人間には非表示） */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register('website')}
+        />
+      </div>
+
       {/* プライバシー注記 */}
       <p className="text-caption text-primary-600 leading-relaxed">
         {form.privacyNote}
@@ -268,10 +309,8 @@ export function ContactForm() {
         </Button>
       </div>
 
-      {status === 'error' && (
-        <p className="text-body-sm text-red-600">
-          送信に失敗しました。時間をおいて再度お試しください。
-        </p>
+      {status === 'error' && errorMessage && (
+        <p className="text-body-sm text-red-600">{errorMessage}</p>
       )}
     </form>
   );
