@@ -47,7 +47,7 @@ export function ConceptSection() {
             {CONCEPT.sectionLabel}
           </p>
 
-          <h2 className="font-serif-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-10 text-balance">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-10 text-balance">
             {CONCEPT.heading}
           </h2>
 

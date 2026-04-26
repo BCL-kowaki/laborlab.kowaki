@@ -41,7 +41,7 @@ export function FaqAccordion({ items, className }: FaqAccordionProps) {
                 <span className="font-sans-en text-accent font-bold text-sub shrink-0">
                   Q.
                 </span>
-                <span className="font-serif-ja text-sub font-bold text-primary-900 leading-[1.6]">
+                <span className="font-sans-ja text-sub font-bold text-primary-900 leading-[1.6]">
                   {item.question}
                 </span>
               </span>

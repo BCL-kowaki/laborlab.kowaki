@@ -50,7 +50,7 @@ export function IssueSection() {
                   <AlertCircle className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="typo-sub mb-3">{item.title}</h3>
+                  <h3 className="typo-card mb-3">{item.title}</h3>
                   <p className="typo-body">{item.body}</p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export function IssueSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={defaultViewport}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16 text-primary-900 text-lead-lg font-bold font-serif-ja"
+          className="text-center mt-16 text-primary-900 text-lead-lg font-bold font-sans-ja"
         >
           {ISSUES.closing}
         </motion.p>

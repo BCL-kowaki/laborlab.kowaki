@@ -68,7 +68,7 @@ export function Hero() {
         initial={{ opacity: 0, scaleX: 0 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: easings.smooth }}
-        className="absolute top-32 left-0 w-24 md:w-40 h-[2px] bg-accent origin-left z-10"
+        className="absolute top-20 left-0 w-24 md:w-40 h-[1px] bg-accent origin-left z-10"
         aria-hidden="true"
       />
 

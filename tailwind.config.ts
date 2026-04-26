@@ -62,7 +62,7 @@ const config: Config = {
         lead: '1.0625rem', // 17px
         'lead-lg': '1.125rem', // 18px
         body: '1rem', // 16px
-        'body-sm': '0.9375rem', // 15px
+        'body-sm': '1rem', // 16px（旧15pxから引き上げ）
         meta: '0.8125rem', // 13px
         caption: '0.75rem', // 12px
         micro: '0.6875rem', // 11px

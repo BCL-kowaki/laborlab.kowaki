@@ -31,7 +31,7 @@ export default function FaqPage() {
       {/* CTA */}
       <section className="section-py-md bg-white">
         <Container size="narrow" className="text-center">
-          <h2 className="font-serif-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6 text-balance">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6 text-balance">
             ご質問は直接お問い合わせからも承ります
           </h2>
           <p className="typo-lead-lg mb-8">

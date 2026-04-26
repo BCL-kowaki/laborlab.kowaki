@@ -56,7 +56,7 @@ export default function CaseDetailPage({ params }: PageProps) {
 
             <h2 className="typo-section mt-14 mb-6">経営者のひとこと</h2>
             <blockquote className="relative pl-8 border-l-4 border-accent py-2 not-italic">
-              <p className="font-serif-ja text-card font-bold text-primary-900 leading-[1.7]">
+              <p className="font-sans-ja text-card font-bold text-primary-900 leading-[1.7]">
                 {item.title}
               </p>
               <p className="typo-meta mt-4">

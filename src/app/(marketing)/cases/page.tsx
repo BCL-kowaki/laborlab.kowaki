@@ -54,7 +54,7 @@ export default function CasesPage() {
 
       <section className="section-py-md bg-white">
         <Container size="narrow" className="text-center">
-          <h2 className="font-serif-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6">
             あなたの会社も、次の事例へ
           </h2>
           <p className="typo-lead-lg mb-8">

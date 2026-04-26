@@ -36,10 +36,10 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-100 text-right">
-            <p className="font-serif-ja text-body font-bold text-primary-900">
+            <p className="font-sans-ja text-body font-bold text-primary-900">
               {ABOUT.greeting.signature.office}
             </p>
-            <p className="font-serif-ja text-meta text-primary-700 mt-1">
+            <p className="font-sans-ja text-meta text-primary-700 mt-1">
               {ABOUT.greeting.signature.title}{' '}
               <span className="font-bold text-body">
                 {ABOUT.greeting.signature.name}
@@ -61,7 +61,7 @@ export default function AboutPage() {
             {ABOUT.overview.items.map((item, i) => (
               <div key={item.label} className="contents">
                 <dt
-                  className={`font-serif-ja text-body-sm font-bold text-primary-900 bg-gray-50 md:bg-transparent px-6 py-4 md:py-5 ${
+                  className={`font-sans-ja text-body-sm font-bold text-primary-900 bg-gray-50 md:bg-transparent px-6 py-4 md:py-5 ${
                     i !== 0 ? 'md:border-t md:border-gray-100' : ''
                   }`}
                 >
@@ -102,7 +102,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="section-py-md bg-primary-900">
         <Container size="narrow" className="text-center">
-          <h2 className="font-serif-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-6">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-6">
             まずは、気軽にご相談ください
           </h2>
           <p className="text-white/85 text-lead-lg leading-[1.9] mb-8">

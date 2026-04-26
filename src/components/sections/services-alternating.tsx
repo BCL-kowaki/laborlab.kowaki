@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { Container } from '@/components/ui/container';
@@ -43,31 +44,24 @@ export function ServicesAlternating() {
                 {/* ビジュアル */}
                 <div
                   className={cn(
-                    'relative overflow-hidden rounded-lg bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 aspect-[4/3]',
+                    'relative overflow-hidden rounded-lg bg-primary-900 aspect-[4/3]',
                     !isImageLeft && 'lg:order-2',
                   )}
                 >
-                  {/* ドットパターン */}
+                  {/* メイン画像 */}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                    priority={i === 0}
+                  />
+                  {/* 視認性確保のための薄いオーバーレイ */}
                   <div
-                    className="absolute inset-0 opacity-[0.08]"
-                    style={{
-                      backgroundImage:
-                        'radial-gradient(circle, #C9A961 1px, transparent 1px)',
-                      backgroundSize: '36px 36px',
-                    }}
+                    className="absolute inset-0 bg-gradient-to-t from-primary-900/60 via-primary-900/10 to-transparent"
                     aria-hidden="true"
                   />
-                  {/* 大きな番号装飾 */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span
-                      className="font-sans-en font-extrabold text-white/10 select-none leading-none"
-                      style={{
-                        fontSize: 'clamp(6rem, 16vw, 14rem)',
-                      }}
-                    >
-                      {item.number}
-                    </span>
-                  </div>
                   {/* カテゴリ */}
                   <div className="absolute bottom-6 left-6">
                     <p
@@ -76,6 +70,15 @@ export function ServicesAlternating() {
                     >
                       {item.category}
                     </p>
+                  </div>
+                  {/* 番号（右上） */}
+                  <div className="absolute top-6 right-6">
+                    <span
+                      className="font-sans-en font-extrabold text-white/80 leading-none"
+                      style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+                    >
+                      {item.number}
+                    </span>
                   </div>
                 </div>
 
@@ -94,7 +97,7 @@ export function ServicesAlternating() {
                   </p>
 
                   {/* タイトル */}
-                  <h3 className="font-sans-ja text-card font-bold text-primary-900 leading-[1.4] mb-6 text-balance" style={{ letterSpacing: '0.03em' }}>
+                  <h3 className="typo-card mb-6 text-balance">
                     {item.title}
                   </h3>
 

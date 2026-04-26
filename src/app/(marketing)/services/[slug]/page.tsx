@@ -127,7 +127,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
       {/* CTA */}
       <section className="section-py-md bg-primary-900">
         <Container size="narrow" className="text-center">
-          <h2 className="font-serif-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-6 text-balance">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-white leading-[1.3] tracking-tight mb-6 text-balance">
             {service.title}のご相談はこちら
           </h2>
           <p className="text-white/85 text-lead-lg leading-[1.9] mb-8">

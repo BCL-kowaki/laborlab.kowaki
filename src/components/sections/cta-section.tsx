@@ -29,6 +29,16 @@ export function CtaSection() {
           }}
         />
       </div>
+      {/* 装飾: 大きな金色リング（左上） */}
+      <div
+        className="absolute -top-32 -left-32 w-96 h-96 rounded-full border-2 border-accent/15 pointer-events-none"
+        aria-hidden="true"
+      />
+      {/* 装飾: 大きな金色リング（右下） */}
+      <div
+        className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full border border-accent/10 pointer-events-none"
+        aria-hidden="true"
+      />
 
       <Container className="relative z-10">
         <motion.div

@@ -14,7 +14,7 @@ export const BRAND = {
   shortName: '小脇社労士事務所',
   slogan: 'Labor Lab.',
   sloganEn: 'rethinking labor for the AI era.',
-  tagline: '労務のDXは、経営の加速装置。',
+  tagline: 'DXで、労務の未来をつくる。。',
   domain: 'laborlab.kowackey.com',
   siteUrl: 'https://laborlab.kowackey.com',
 } as const;
@@ -34,7 +34,7 @@ export const CONTACT = {
 // ==========================================================
 export const HERO = {
   sectionLabel: 'DX FOR YOUR BUSINESS',
-  mainHeading: ['労務のDXは、', '経営の加速装置。'],
+  mainHeading: ['DXで、', '労務の未来をつくる。'],
   subHeading: `紙とExcelから、AIとクラウドへ。\n鹿児島発、テクノロジーで経営を伴走する\n新時代の社労士事務所。`,
   description: `小脇社会保険労務士事務所は、\n鹿児島で唯一、AIを活用したIT・DXコンサルティング企業と連携する社会保険労務士事務所です。\n\n顧問先には、独自開発のクラウド労務管理システムを標準提供。\n書類仕事に追われる社労士ではなく、経営者の隣でDXを推進する労務パートナーへ。`,
   ctaPrimary: '無料相談を申し込む',
@@ -345,6 +345,7 @@ export const SERVICE_DETAILS = {
         'OCR書類取り込み',
       ],
       href: '/services/cloud-labor',
+      image: '/images/001.png',
       imagePosition: 'left' as const,
     },
     {
@@ -359,6 +360,7 @@ export const SERVICE_DETAILS = {
         '社員教育',
       ],
       href: '/services/dx-consulting',
+      image: '/images/002.png',
       imagePosition: 'right' as const,
     },
     {
@@ -374,6 +376,7 @@ export const SERVICE_DETAILS = {
         'クラウド労務標準搭載',
       ],
       href: '/pricing',
+      image: '/images/003.png',
       imagePosition: 'left' as const,
     },
     {
@@ -388,6 +391,7 @@ export const SERVICE_DETAILS = {
         '申請代行連携',
       ],
       href: '/services/ai-grant',
+      image: '/images/004.png',
       imagePosition: 'right' as const,
     },
   ],
@@ -489,43 +493,132 @@ export const COMPANY_INFO = {
 // ==========================================================
 export const PRICING = {
   sectionLabel: 'PRICE PLANS',
-  heading: '料金プラン',
-  lead: '明瞭な定額制で、安心してご相談いただけます。',
-  advisoryPlans: [
-    {
-      name: 'スターター',
-      range: '〜10名',
-      price: 35000,
-      includes: ['基本顧問', 'クラウド労務システム', 'AI助成金検出'],
-    },
-    {
-      name: 'スタンダード',
-      range: '11〜30名',
-      price: 60000,
-      includes: ['スターター内容', '給与計算代行', '手続き代行'],
-    },
-    {
-      name: 'プレミアム',
-      range: '31〜50名',
-      price: 100000,
-      includes: ['スタンダード内容', '労務監査', '就業規則改定（年1回）'],
-    },
-    {
-      name: 'エンタープライズ',
-      range: '51名〜',
-      priceLabel: '個別見積',
-      includes: ['労務DX全体支援', '労務DD', '人事制度設計'],
-    },
+  heading: '料金',
+  lead: '明瞭な料金体系で、必要な業務だけを必要な分だけご利用いただけます。',
+  /**
+   * 月次契約（社会保険手続き・給与計算）
+   * 人員別の月額（税別）
+   */
+  socialMonthly: {
+    title: '社会保険手続き 月次契約',
+    description:
+      '社会保険、労働保険、雇用保険関係の諸手続き、および労務管理に関するご相談を承ります。',
+    note: '※ 相談業務のみご依頼いただきたい方はご相談ください。',
+    columns: ['人員', '報酬月額（税別）'],
+    rows: [
+      { label: '1〜4人', price: '15,000円' },
+      { label: '5〜9人', price: '20,000円' },
+      { label: '10〜19人', price: '25,000円' },
+      { label: '20〜29人', price: '30,000円' },
+      { label: '30人〜', price: '要相談' },
+    ],
+  },
+  payrollMonthly: {
+    title: '給与計算 月次契約',
+    columns: ['人員', '報酬月額（税別）'],
+    rows: [
+      { label: '1〜4人', price: '5,000円' },
+      { label: '5〜9人', price: '10,000円' },
+      { label: '10〜19人', price: '15,000円' },
+      { label: '20〜29人', price: '20,000円' },
+      { label: '30人〜', price: '要相談' },
+    ],
+    note: '※ 賞与計算は1回につき月額と同額です。',
+  },
+  /**
+   * 個別スポット契約（労働保険、社会保険新規）
+   * 人員 × 保険種別のマトリクス
+   */
+  spotInsurance: {
+    title: '個別スポット契約（労働保険・社会保険 新規）',
+    columns: ['人員', '社会保険', '労働保険', '両保険同時（税別）'],
+    rows: [
+      { label: '1〜4人', values: ['20,000円', '20,000円', '38,000円'] },
+      { label: '5〜9人', values: ['30,000円', '30,000円', '58,000円'] },
+      { label: '10〜19人', values: ['40,000円', '40,000円', '76,000円'] },
+      { label: '20〜29人', values: ['50,000円', '50,000円', '94,000円'] },
+      { label: '30人〜', values: ['要相談', '要相談', '要相談'] },
+    ],
+  },
+  /**
+   * 保険料の算定・申告
+   */
+  insuranceCalc: {
+    title: '保険料の算定・申告',
+    columns: ['人員', '社会保険（算定基礎届）', '労働保険（概算・確定申告）'],
+    rows: [
+      { label: '1〜9人', values: ['20,000円', '20,000円'] },
+      { label: '10〜19人', values: ['25,000円', '25,000円'] },
+      { label: '20〜29人', values: ['30,000円', '30,000円'] },
+      { label: '30人〜', values: ['要相談', '要相談'] },
+    ],
+  },
+  /**
+   * 保険給付申請、各種届出、助成金申請
+   * 1件あたり報酬（税別）
+   */
+  applications: {
+    title: '保険給付申請・各種届出・助成金申請',
+    description: '申請1件あたりの報酬（税別）',
+    items: [
+      {
+        label: '社会保険・雇用保険　資格取得 ☆',
+        price: '5,000円（扶養届あり 8,000円）',
+      },
+      {
+        label: '社会保険・雇用保険　資格喪失 ☆',
+        price: '5,000円（離職票あり 8,000円）',
+      },
+      {
+        label: '雇用保険　育児休業給付申請',
+        price: '5,000円（初回申請 10,000円）',
+      },
+      { label: '労災・健保　給付申請（書面提出）', price: '30,000円〜' },
+      { label: '36協定等 労使協定の作成・届出', price: '10,000円〜' },
+      { label: '助成金申請', price: '助成金受給額の15%（成功報酬）' },
+      { label: 'セミナー・研修講師', price: '助成金の種類により別途' },
+      { label: '相談（初回無料）', price: '30,000円〜' },
+    ],
+    note: '☆ 顧問契約の場合、社会保険・雇用保険の資格取得・喪失の届出は月々の顧問契約料に含まれます。',
+    reservationNote: '※ 日時をご予約の上、ご来所ください。',
+  },
+  /**
+   * 就業規則作成
+   */
+  workRules: {
+    title: '就業規則の作成',
+    items: [
+      { label: '本則作成、届出', price: '150,000円〜' },
+      {
+        label: '基本セット（本則・賃金規程・育児介護休業規程）、届出',
+        price: '200,000円〜',
+      },
+      { label: '全体的な変更、見直し', price: '100,000円〜（別途お見積り）' },
+      { label: '部分的な変更、見直し', price: '30,000円〜' },
+      { label: '作成後の従業員説明会', price: '30,000円〜' },
+    ],
+  },
+  notes: [
+    '※ 表示料金はすべて税別です。',
+    '※ 初回相談は無料です（要予約）。',
   ],
-  spotServices: [
-    { label: '就業規則 新規作成', price: '¥200,000〜' },
-    { label: '就業規則 改定', price: '¥50,000〜' },
-    { label: '助成金 申請代行', price: '着手金 ¥50,000 ＋ 成功報酬15%' },
-    { label: '労務監査', price: '¥150,000〜' },
-    { label: '労働保険 新規適用', price: '¥30,000' },
-    { label: '社会保険 新規適用', price: '¥30,000' },
-  ],
-  notes: ['※ 初回相談（60分）は無料です。', '※ 表示料金はすべて税別です。'],
+  /**
+   * 顧問契約者向け付帯サービス（料金表外の追加価値）。
+   * クラウド労務管理システムは顧問契約者に標準提供される。
+   */
+  bundled: {
+    sectionLabel: 'BUNDLED SERVICE',
+    heading: '顧問契約には、クラウド労務管理システムが標準搭載',
+    body: '当事務所と月次契約をご締結いただいたお客様には、AIを活用したIT・DXコンサルティング企業との提携により、クラウド労務管理システムを追加料金なしでご提供しています。\n\n勤怠・有給・給与・法定三帳簿をクラウドで一元管理。スマートフォンでの打刻、ダッシュボードでの可視化、書類のOCR取り込みなど、同等機能のSaaSが月額2〜5万円で提供される領域を、月次契約料の範囲内でご利用いただけます。',
+    features: [
+      'スマートフォン打刻',
+      '有給・残業のリアルタイム可視化',
+      '法定三帳簿のクラウド一元管理',
+      'マイナンバーの安全な管理',
+      'OCRによる書類の自動データ化',
+    ],
+    note: '※ 付帯サービスは月次契約のオプションとして提供しており、料金表の月額には別途のシステム利用料は発生しません。',
+  },
 } as const;
 
 // ==========================================================

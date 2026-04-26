@@ -54,7 +54,7 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div className="p-8 bg-accent-50 border border-accent-200 rounded-lg text-center">
-        <h3 className="font-serif-ja text-h3 font-bold text-primary-900 mb-3">
+        <h3 className="font-sans-ja text-h3 font-bold text-primary-900 mb-3">
           お問い合わせを受け付けました
         </h3>
         <p className="text-body text-primary-700 leading-relaxed">
@@ -86,7 +86,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+          className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
         >
           お名前 <span className="text-accent">*</span>
         </label>
@@ -108,7 +108,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="company"
-          className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+          className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
         >
           会社名 <span className="text-accent">*</span>
         </label>
@@ -130,7 +130,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="employees"
-          className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+          className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
         >
           従業員数 <span className="text-accent">*</span>
         </label>
@@ -161,7 +161,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+            className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
           >
             メールアドレス <span className="text-accent">*</span>
           </label>
@@ -181,7 +181,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor="phone"
-            className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+            className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
           >
             電話番号
           </label>
@@ -199,7 +199,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="subject"
-          className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+          className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
         >
           ご相談内容 <span className="text-accent">*</span>
         </label>
@@ -229,7 +229,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block font-serif-ja text-body-sm font-bold text-primary-900 mb-2"
+          className="block font-sans-ja text-body-sm font-bold text-primary-900 mb-2"
         >
           お問い合わせ内容 <span className="text-accent">*</span>
         </label>

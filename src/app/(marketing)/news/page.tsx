@@ -45,7 +45,7 @@ export default function NewsPage() {
                     <span className="inline-block px-2.5 py-0.5 bg-accent-50 text-accent-600 text-caption font-bold rounded shrink-0 w-fit">
                       {n.category}
                     </span>
-                    <h3 className="font-serif-ja text-sub font-bold text-primary-900 group-hover:text-accent transition-colors leading-[1.5]">
+                    <h3 className="font-sans-ja text-sub font-bold text-primary-900 group-hover:text-accent transition-colors leading-[1.5]">
                       {n.title}
                     </h3>
                   </div>

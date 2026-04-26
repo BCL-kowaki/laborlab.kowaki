@@ -31,7 +31,7 @@ export default function StaffPage() {
               >
                 {/* 写真プレースホルダー */}
                 <div className="aspect-square w-full rounded-lg bg-gradient-to-br from-primary-50 to-accent-50 mb-6 flex items-center justify-center">
-                  <span className="font-serif-ja text-display-xl font-bold text-primary-200 select-none">
+                  <span className="font-sans-ja text-display-xl font-bold text-primary-200 select-none">
                     {m.name.charAt(0)}
                   </span>
                 </div>
@@ -77,7 +77,7 @@ export default function StaffPage() {
 
       <section className="section-py-md bg-gray-50">
         <Container size="narrow" className="text-center">
-          <h2 className="font-serif-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6">
+          <h2 className="font-sans-ja text-page-h1 font-bold text-primary-900 leading-[1.3] tracking-tight mb-6">
             チーム全員で、貴社をサポートします
           </h2>
           <p className="typo-lead-lg mb-8">

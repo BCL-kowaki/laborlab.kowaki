@@ -134,7 +134,7 @@ export function Header() {
           />
           <div className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl">
             <div className="flex items-center justify-between h-16 px-6 border-b border-gray-100">
-              <span className="font-serif-ja font-bold text-primary-900">
+              <span className="font-sans-ja font-bold text-primary-900">
                 メニュー
               </span>
               <button
