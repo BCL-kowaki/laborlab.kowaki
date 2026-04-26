@@ -89,7 +89,7 @@ export function Hero() {
           {/* メインヘッドコピー — Heroのみ明朝で格を出す */}
           <h1
             className="font-serif-ja text-white leading-[1.5] mb-10"
-            style={{ letterSpacing: '0.05em' }}
+            style={{ letterSpacing: '0em' }}
           >
             {HERO.mainHeading.map((line, i) => (
               <motion.span

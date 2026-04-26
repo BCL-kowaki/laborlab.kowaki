@@ -52,7 +52,7 @@ export function GreetingExcerpt() {
                   alt={`${GREETING_TOP.signature.office} 代表`}
                   fill
                   sizes="(min-width: 768px) 420px, 280px"
-                  className="object-contain p-8"
+                  className="object-cover"
                   priority={false}
                 />
               </div>

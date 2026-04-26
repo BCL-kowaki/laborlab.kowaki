@@ -14,7 +14,7 @@ export const BRAND = {
   shortName: '小脇社労士事務所',
   slogan: 'Labor Lab.',
   sloganEn: 'rethinking labor for the AI era.',
-  tagline: 'DXで、労務の未来をつくる。。',
+  tagline: 'DXで、労務の未来をつくる',
   domain: 'laborlab.kowackey.com',
   siteUrl: 'https://laborlab.kowackey.com',
 } as const;
@@ -34,7 +34,7 @@ export const CONTACT = {
 // ==========================================================
 export const HERO = {
   sectionLabel: 'DX FOR YOUR BUSINESS',
-  mainHeading: ['DXで、', '労務の未来をつくる。'],
+  mainHeading: ['DXで、', '労務の未来をつくる'],
   subHeading: `紙とExcelから、AIとクラウドへ。\n鹿児島発、テクノロジーで経営を伴走する\n新時代の社労士事務所。`,
   description: `小脇社会保険労務士事務所は、\n鹿児島で唯一、AIを活用したIT・DXコンサルティング企業と連携する社会保険労務士事務所です。\n\n顧問先には、独自開発のクラウド労務管理システムを標準提供。\n書類仕事に追われる社労士ではなく、経営者の隣でDXを推進する労務パートナーへ。`,
   ctaPrimary: '無料相談を申し込む',

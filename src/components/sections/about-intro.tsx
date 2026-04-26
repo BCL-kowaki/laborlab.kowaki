@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { ABOUT_TOP } from '@/lib/copy';
@@ -87,25 +87,12 @@ export function AboutIntro() {
                 }}
                 aria-hidden="true"
               />
-              {/* 金色の大きな円リング装飾（右上） */}
-              <div
-                className="absolute -top-16 -right-16 w-72 h-72 rounded-full border-[3px] border-accent/40 pointer-events-none"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute -top-8 -right-8 w-56 h-56 rounded-full border border-accent/20 pointer-events-none"
-                aria-hidden="true"
-              />
               {/* 中央の英大文字 */}
               <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
-                <Sparkles
-                  className="h-10 w-10 text-accent-300 mb-6"
-                  strokeWidth={1.4}
-                />
                 <p
                   className="font-sans-en text-white font-extrabold leading-none mb-4"
                   style={{
-                    fontSize: 'clamp(3rem, 7vw, 5rem)',
+                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                     letterSpacing: '0.05em',
                   }}
                 >

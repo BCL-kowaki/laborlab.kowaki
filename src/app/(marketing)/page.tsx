@@ -16,7 +16,7 @@ import { CtaSection } from '@/components/sections/cta-section';
  * トップページ — DX推しの全面改訂版 (v7)
  *
  * 構成（参考: https://www.fudou3-malta.jp/ja）
- * 1. Hero ─ MV動画 + "DXで、労務の未来をつくる。"
+ * 1. Hero ─ MV動画 + "DXで、労務の未来をつくる"
  * 2. AboutIntro ─ 事務所について（抜粋）
  * 3. GreetingExcerpt ─ 代表挨拶（抜粋）
  * 4. WhyUs ─ 選ばれる3つの理由（DX / AI×クラウド / 助成金）
