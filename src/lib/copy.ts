@@ -235,50 +235,6 @@ export const SERVICES = {
 } as const;
 
 // ==========================================================
-// Solutions（トップ: 4枚のDX主力サービスギャラリー）
-// ==========================================================
-export const SOLUTIONS = {
-  sectionLabel: 'OUR SOLUTIONS',
-  heading: 'DXで、労務の未来をつくる',
-  lead:
-    'AIとクラウドを組み合わせた、これからの労務ソリューション。\n顧問契約の範囲内で、貴社のDXを一気に加速させます。',
-  items: [
-    {
-      number: '01',
-      category: 'LABOR CLOUD',
-      title: 'クラウド労務管理システム',
-      description:
-        '法定三帳簿・勤怠・給与をクラウドで一元管理。スマホで打刻、ダッシュボードでリアルタイム可視化。',
-      href: '/services/cloud-labor',
-    },
-    {
-      number: '02',
-      category: 'DX CONSULTING',
-      title: '労務DXコンサルティング',
-      description:
-        '紙・Excelからの脱却、勤怠・給与計算・人事評価のデジタル化を一気通貫で支援。',
-      href: '/services/dx-consulting',
-    },
-    {
-      number: '03',
-      category: 'ADVISORY',
-      title: '顧問契約フルサポート',
-      description:
-        '日常労務相談・法改正情報・手続き代行に加え、DXソリューションを標準搭載。',
-      href: '/services/advisor',
-    },
-    {
-      number: '04',
-      category: 'GRANT MATCHING',
-      title: 'AIによる助成金の自動検出',
-      description:
-        '国と地方自治体の助成金情報をAIが常時モニタリング。DX化と合わせて、申請可能な制度を逃しません。',
-      href: '/services/ai-grant',
-    },
-  ],
-} as const;
-
-// ==========================================================
 // About（トップ用の抜粋）
 // ==========================================================
 export const ABOUT_TOP = {
@@ -342,7 +298,6 @@ export const SERVICE_DETAILS = {
         'マイナンバー管理',
         'OCR書類取り込み',
       ],
-      href: '/services/cloud-labor',
       image: '/images/001.png',
       imagePosition: 'left' as const,
     },
@@ -357,7 +312,6 @@ export const SERVICE_DETAILS = {
         '運用サポート',
         '社員教育',
       ],
-      href: '/services/dx-consulting',
       image: '/images/002.png',
       imagePosition: 'right' as const,
     },
@@ -373,7 +327,6 @@ export const SERVICE_DETAILS = {
         '手続き代行',
         'クラウド労務標準搭載',
       ],
-      href: '/pricing',
       image: '/images/003.png',
       imagePosition: 'left' as const,
     },
@@ -388,7 +341,6 @@ export const SERVICE_DETAILS = {
         '鹿児島独自制度対応',
         '申請代行連携',
       ],
-      href: '/services/ai-grant',
       image: '/images/004.png',
       imagePosition: 'right' as const,
     },

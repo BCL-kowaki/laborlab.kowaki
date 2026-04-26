@@ -18,34 +18,31 @@ export default function ServicesPage() {
       <PageHero
         sectionLabel={SERVICES.sectionLabel}
         heading={SERVICES.heading}
-        lead={'AIとクラウドで、労務を経営の加速装置に変える。\n顧問契約・DXコンサル・スポット業務まで、貴社の成長フェーズに合わせた7つのサービス。'}
+        lead={
+          'AIとクラウドで、労務を経営の加速装置に変える。\n顧問契約・DXコンサル・スポット業務まで、貴社の成長フェーズに合わせたサービス。'
+        }
       />
 
       <section className="section-py-lg bg-white">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {SERVICES.items.map((service, i) => (
-              <Link
+              <li
                 key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group relative flex flex-col p-8 bg-white rounded-lg border border-gray-100 hover:border-accent hover:shadow-lg transition-all duration-300"
+                className="relative flex flex-col p-8 bg-white rounded-lg border border-gray-100 hover:border-accent/40 hover:shadow-lg transition-all duration-300"
               >
                 <div className="mb-6">
                   <span className="font-sans-en text-accent text-meta tracking-[0.15em] font-bold">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <h3 className="typo-card mb-4 group-hover:text-accent transition-colors text-balance">
+                <h3 className="typo-card mb-4 text-balance">
                   {service.title}
                 </h3>
                 <p className="typo-body flex-1">{service.description}</p>
-                <div className="mt-6 flex items-center text-accent font-medium text-body-sm">
-                  <span>詳しく見る</span>
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </section>
 

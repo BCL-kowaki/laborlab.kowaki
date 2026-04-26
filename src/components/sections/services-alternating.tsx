@@ -2,13 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
-import { Button } from '@/components/ui/button';
 import { SERVICE_DETAILS } from '@/lib/copy';
-import { fadeInUp, defaultViewport } from '@/lib/motion';
+import { defaultViewport } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 /**
@@ -105,7 +103,7 @@ export function ServicesAlternating() {
                   <p className="typo-body mb-8">{item.body}</p>
 
                   {/* 主な機能 */}
-                  <ul className="space-y-2 mb-8">
+                  <ul className="space-y-2">
                     {item.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
                         <Check className="h-4 w-4 text-accent mt-1 shrink-0" />
@@ -115,13 +113,6 @@ export function ServicesAlternating() {
                       </li>
                     ))}
                   </ul>
-
-                  <Button variant="secondary" asChild className="group">
-                    <Link href={item.href}>
-                      詳しく見る
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
                 </div>
               </motion.article>
             );

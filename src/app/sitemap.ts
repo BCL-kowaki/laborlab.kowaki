@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { BRAND, SERVICES } from '@/lib/copy';
+import { BRAND } from '@/lib/copy';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = BRAND.siteUrl;
@@ -23,9 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
   ];
 
-  const serviceSlugs = SERVICES.items.map((s) => `/services/${s.slug}`);
-
-  return [...staticPages, ...serviceSlugs].map((path) => ({
+  return staticPages.map((path) => ({
     url: `${base}${path}`,
     lastModified: now,
     changeFrequency: path === '' ? 'weekly' : 'monthly',
